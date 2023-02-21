@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // ngay thang
+        var t = prompt("Nhập vào một tháng của năm không nhuận :"); 
+        switch (eval(t))
+        { 
+            case 1: 
+            case 3: 
+            case 5: 
+            case 7: 
+            case 8: 
+            case 10: 
+            case 12:
+                alert(' Tháng '+ t +' có 31 ngày');
+            break;
+            case 2:
+                alert(' Tháng' + t + 'có 28 ngày');
+            break;
+            case 4: 
+            case 6: 
+            case 9: 
+            case 11:
+                alert('Tháng ' + t +' có 30 ngày'); 
+            break;
+            default:     
+            alert('Không phải là tháng của năm');
+        };
+
+        // cong hai so
+        function cong2so()
+        {
+            var so1 = parseInt(myform.txtso1.value);
+            var so2 = parseInt(myform.txtso2.value);
+            var kq = so1 + so2;
+            document.write('ket qua: ' + kq);
+        }
+
+        // change
+        document.write('Hello Javascript');
+        function demo()
+        {
+            document.write('Hello Javascript');
+        }
+
+        //alert
+        alert('Xin chao cac ban!');
+        var ho = 'Ha Manh';
+        var ten = 'Hung';
+        document.write('<h2>' + ho + " " + ten + '</h2>');
+
+        //nam nhuan
+        function kiemTraNamNhuan()
+        {
+            var nam = document.getElementById('txtName').value;
+            if(nam % 100 ==0)
+            {
+                if(nam % 400 == 0)
+                {
+                    alert('Nam' + nam + 'la nam nhuan');
+                }
+                else
+                {
+                    alert('Nam' + nam + 'khong phai la nam nhuan');
+                }
+            }
+            else if(nam % 4 == 0)
+            {
+                alert('Nam' + nam + 'la nam nhuan');
+            }
+            else
+            {
+                alert('Nam' + nam + 'khong phai la nam nhuan');
+            } 
+        }
+
+        //list
+        var n, m, i, j;
+        m = prompt('nhap so dong');
+        n = prompt('nhap so cot');
+        document.write('<caption>' + "danh sach" + '</caption>');
+        document.write('<table width=50% border=1>');
+            document.write('<tr>');
+            for(i=1;i<m;i++)
+            {
+                document.write('<th>' + 'tieu de thu' + i + '</th>')
+            }
+            document.write('</tr>');
+
+            for(i=1;i<=m;i++)
+            {
+                document.write('<tr>');
+                for(j=1;j<=n;j++)
+                {
+                    document.write('<td>' + i + j + '</td>');
+                }
+                document.write('</tr>');
+            }
+        document.write('</table>');
+    </script>
+</head>
+<body>
+    <form name="myform">
+        <input type="text" name="txtso1">;
+        <input type="text" name="txtso2">;
+        <input type="button" value="cộng" onclick="cong2so()">;
+    </form>
+
+    <p id="demo">Javascript can change HTML content.</p>;
+    <button type="button" onclick="document.getElementById('demo').innerHTML = 'Hello Javascript'">Click me</button>;
+
+    <p>Nhap nam muon kiem tra</p>;
+    <input type="text" name="txtName" id="txtName">;
+    <input type="button" value="Kiem tra" onclick="kiemTraNamNhuan()">;
+</body>
+</html>
